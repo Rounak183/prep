@@ -115,16 +115,16 @@
 
 **Pattern 8: Stock Buy/Sell (8 problems)**
 
-| #            | Problem                                       | LeetCode #     | Difficulty     | Time      | Key Concept                  | Revision     |
-|--------------|-----------------------------------------------|----------------|----------------|-----------|------------------------------|--------------|
-| Done 38      | Best Time to Buy/Sell Stock                   | 121            | Easy           | 20min     | Track min, max profit        | 2            |
-| Done 39      | Best Time II (Unlimited)                      | 122            | Medium         | 30min     | Greedy/DP                    | 2            |
-| Done 40      | Best Time III (At Most 2)                     | 123            | Hard           | 60min     | State machine DP             | 2            |
-| Done 41      | Best Time IV (At Most k)                      | 188            | Hard           | 60min     | DP with k transactions       | 1            |
-| 42           | Best Time V (Normal + Short)                  | 3573           | Medium         | 60min     | DP with short selling        |              |
-| Done 43      | Best Time with Cooldown                       | 309            | Medium         | 45min     | State machine (3 states)     | 1            |
-| Done 44      | Best Time with Transaction Fee                | 714            | Medium         | 45min     | State machine + fee          | 1            |
-| 45           | Best Time to But/Sell Stock with Strategy     | 309            | Medium         | 45min     |                              |              |
+| #       | Problem                                       | LeetCode #     | Difficulty     | Time      | Key Concept                  | Revision |
+|---------|-----------------------------------------------|----------------|----------------|-----------|------------------------------|----------|
+| Done 38 | Best Time to Buy/Sell Stock                   | 121            | Easy           | 20min     | Track min, max profit        | 2        |
+| Done 39 | Best Time II (Unlimited)                      | 122            | Medium         | 30min     | Greedy/DP                    | 2        |
+| Done 40 | Best Time III (At Most 2)                     | 123            | Hard           | 60min     | State machine DP             | 2        |
+| Done 41 | Best Time IV (At Most k)                      | 188            | Hard           | 60min     | DP with k transactions       | 1        |
+| Done 42 | Best Time V (Normal + Short)                  | 3573           | Medium         | 60min     | DP with short selling        | 1        |
+| Done 43 | Best Time with Cooldown                       | 309            | Medium         | 45min     | State machine (3 states)     | 1        |
+| Done 44 | Best Time with Transaction Fee                | 714            | Medium         | 45min     | State machine + fee          | 1        |
+| Done 45 | Best Time to But/Sell Stock with Strategy     | 309            | Medium         | 45min     |                              | 1        |
 
 ### DFS Advanced (3 problems, ~2.25 hours)
 
