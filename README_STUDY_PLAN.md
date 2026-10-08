@@ -148,7 +148,7 @@
 |---------|----------------------------------|----------------|----------------|-----------|--------------------------------|----------|
 | Done 52 | Merge k Sorted Lists             | 23             | Hard           | 60min     | Heap/divide and conquer        | 1        |
 | Done 53 | Find Median from Data Stream     | 295            | Hard           | 60min     | Two heaps                      | 1        |
-| Done 54 | Sliding Window Median            | 480            | Hard           | 60min     | Two heaps + sliding window     |          |
+| Done 54 | Sliding Window Median            | 480            | Hard           | 60min     | Two heaps + sliding window     | 1        |
 
 ---
 
