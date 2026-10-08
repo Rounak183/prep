@@ -144,11 +144,11 @@
 
 ### Arrays Hard Problems (3 problems, ~3 hours)
 
-| #           | Problem                          | LeetCode #     | Difficulty     | Time      | Key Concept                    | Revision     |
-|-------------|----------------------------------|----------------|----------------|-----------|--------------------------------|--------------|
-| Done 52     | Merge k Sorted Lists             | 23             | Hard           | 60min     | Heap/divide and conquer        |              |
-| Done 53     | Find Median from Data Stream     | 295            | Hard           | 60min     | Two heaps                      |              |
-| 54          | Sliding Window Median            | 480            | Hard           | 60min     | Two heaps + sliding window     |              |
+| #       | Problem                          | LeetCode #     | Difficulty     | Time      | Key Concept                    | Revision |
+|---------|----------------------------------|----------------|----------------|-----------|--------------------------------|----------|
+| Done 52 | Merge k Sorted Lists             | 23             | Hard           | 60min     | Heap/divide and conquer        | 1        |
+| Done 53 | Find Median from Data Stream     | 295            | Hard           | 60min     | Two heaps                      | 1        |
+| Done 54 | Sliding Window Median            | 480            | Hard           | 60min     | Two heaps + sliding window     |          |
 
 ---
 

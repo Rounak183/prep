@@ -1,20 +1,100 @@
 class Solution:
-    def maximumProfit(self, prices: List[int], k: int) -> int:
+    def medianSlidingWindow(self, nums: list[int], k: int) -> list[float]:
 
-        n = len(prices)
+        small = []   # max heap (negative values)
+        large = []   # min heap
 
-        buy = [-prices[0]] * (k + 1)
-        short = [prices[0]] * (k + 1)
-        curr = [0] * (k + 1)
+        delayed = defaultdict(int)
 
-        for i in range(n):
-            prev_buy = buy.copy()
-            prev_short = short.copy()
-            prev_curr = curr.copy()
+        small_size = 0
+        large_size = 0
 
-            for j in range(1, k + 1):
-                buy[j] = max(buy[j], prev_curr[j - 1] - prices[i])
-                short[j] = max(short[j], prev_curr[j - 1] + prices[i])
-                curr[j] = max(prev_curr[j], prev_buy[j] - prices[i], prev_short[j] + prices[i])
+        def prune_small():
+            nonlocal small_size
 
-        return curr[-1]
+            while small and delayed[-small[0]]:
+                num = -heapq.heappop(small)
+                delayed[num] -= 1
+
+        def prune_large():
+            nonlocal large_size
+
+            while large and delayed[large[0]]:
+                num = heapq.heappop(large)
+                delayed[num] -= 1
+
+        def add(num):
+            nonlocal small_size, large_size
+
+            if not small or num <= -small[0]:
+                heapq.heappush(small, -num)
+                small_size += 1
+            else:
+                heapq.heappush(large, num)
+                large_size += 1
+
+            # rebalance
+            if small_size > large_size + 1:
+                x = -heapq.heappop(small)
+                heapq.heappush(large, x)
+                small_size -= 1
+                large_size += 1
+
+            elif large_size > small_size:
+                x = heapq.heappop(large)
+                heapq.heappush(small, -x)
+                large_size -= 1
+                small_size += 1
+
+        def remove(num):
+            nonlocal small_size, large_size
+
+            delayed[num] += 1
+
+            if num <= -small[0]:
+                small_size -= 1
+
+                if num == -small[0]:
+                    prune_small()
+            else:
+                large_size -= 1
+
+                if large and num == large[0]:
+                    prune_large()
+
+            # rebalance
+            if small_size > large_size + 1:
+                x = -heapq.heappop(small)
+                heapq.heappush(large, x)
+                small_size -= 1
+                large_size += 1
+
+            elif large_size > small_size:
+                x = heapq.heappop(large)
+                heapq.heappush(small, -x)
+                large_size -= 1
+                small_size += 1
+
+        def median():
+            prune_small()
+            prune_large()
+
+            if k % 2:
+                return float(-small[0])
+
+            return (-small[0] + large[0]) / 2
+
+        # Build first window
+        for i in range(k):
+            add(nums[i])
+
+        ans = [median()]
+
+        # Slide
+        for i in range(k, len(nums)):
+            add(nums[i])
+            remove(nums[i - k])
+
+            ans.append(median())
+
+        return ans
